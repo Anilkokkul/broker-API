@@ -25,21 +25,9 @@ alpaca.getAccount().then((account) => {
 alpaca.getAccount().then((account) => {
   // Calculate the difference between current balance and balance at the last market close.
   const balanceChange = account.equity - account.last_equity;
-
-  console.log("Today's portfolio balance change:", balanceChange);
+  console.log(account);
+  // console.log("Today's portfolio balance change:", balanceChange);
 });
-
-// const activeAssets = alpaca
-//   .getAssets({
-//     status: "active",
-//   })
-//   .then((activeAssets) => {
-//     // Filter the assets down to just those on NASDAQ.
-//     const nasdaqAssets = activeAssets.filter(
-//       (asset) => asset.exchange == "NASDAQ"
-//     );
-//     console.log(nasdaqAssets);
-//   });
 
 const port = process.env.PORT || 8000;
 
